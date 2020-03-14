@@ -14,11 +14,11 @@ end
   def create
     @task = Task.new(task_params)
     
-    if @tasl.save
+    if @task.save
       flash[:success] = 'Task が正常に投稿されました'
       redirect_to @task
     else
-      flash[:danger] = 'Task　が投稿されました'
+      flash.now[:danger] = 'Task　が投稿されませんでした'
       render :new
     end
   end
